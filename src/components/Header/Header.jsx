@@ -4,14 +4,17 @@ import { NavLink } from "react-router-dom";
 export const Header = () => {
   const links = (
     <>
-      <li className=" font-bold  px-4 py-1 border rounded-xl">
+      <li className=" font-bold  px-4 py-1">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className=" font-bold  px-4 py-1 border rounded-xl">
+      <li className=" font-bold  px-4 py-1">
         <NavLink to="/login">Login</NavLink>
       </li>
-      <li className=" font-bold  px-4 py-1 border rounded-xl">
+      <li className=" font-bold  px-4 py-1">
         <NavLink to="/register">Register</NavLink>
+      </li>
+      <li className=" font-bold  px-4 py-1">
+        <NavLink to="/signUp">SignUp</NavLink>
       </li>
       {/* <li><NavLink to="/"></NavLink></li> */}
     </>

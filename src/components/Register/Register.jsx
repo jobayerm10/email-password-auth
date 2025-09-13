@@ -1,7 +1,10 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase.init";
+import { useState } from "react";
 
 export const Register = () => {
+  const [errorMessage, seterrorMessage] = useState([""]);
+
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -14,6 +17,7 @@ export const Register = () => {
       })
       .catch((error) => {
         console.log("ERROR", error);
+        seterrorMessage(error.message);
       });
   };
   return (
@@ -77,6 +81,7 @@ export const Register = () => {
           Login
         </button>
       </form>
+      {errorMessage && <p className="text-red-900">{errorMessage}</p>}
     </div>
   );
 };
