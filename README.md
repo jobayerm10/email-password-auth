@@ -1,12 +1,26 @@
-# React + Vite
+Email & Password Authentication (React + Firebase)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple authentication project built with React, React Router, and Firebase Authentication.
+It includes basic user flows such as Login, Register, and Home, with routing handled by React Router.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔑 User Registration with email & password
 
-## Expanding the ESLint configuration
+🔓 Login with email & password
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🏠 Protected Home page after authentication
+
+📌 React Router for navigation
+
+🎨 Styled with Tailwind CSS
+
+🛠️ Tech Stack
+
+React (Frontend UI)
+
+React Router (Client-side routing)
+
+Firebase Authentication (User authentication)
+
+Tailwind CSS (Styling)
