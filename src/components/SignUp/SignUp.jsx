@@ -3,6 +3,7 @@ import auth from "../../firebase.init";
 import { useState } from "react";
 
 export const SignUp = () => {
+  const [success, setSuccess] = useState(false);
   const [errorMessage, seterrorMessage] = useState([""]);
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -10,9 +11,13 @@ export const SignUp = () => {
     const password = e.target.password.value;
     console.log(email, password);
 
+    setSuccess(false);
+    seterrorMessage("");
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
+        setSuccess(true);
       })
       .catch((error) => {
         console.log("ERROR", error);
@@ -47,6 +52,9 @@ export const SignUp = () => {
         </button>
       </form>
       {errorMessage && <p className="text-red-900">{errorMessage}</p>}
+      {success && (
+        <p className="text-green-600">User has created successfully</p>
+      )}
     </div>
   );
 };
