@@ -11,10 +11,18 @@ export const SignUp = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const terms = e.target.terms.checked;
     console.log(email, password);
 
     setSuccess(false);
     seterrorMessage("");
+
+    {
+      if (!terms) {
+        seterrorMessage("Please accept our terms and conditions");
+        return;
+      }
+    }
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
@@ -57,6 +65,11 @@ export const SignUp = () => {
         <div className="mt-5">
           <a className="link link-hover ">Forgot password?</a>
         </div>
+        <label className="label">
+          <input type="checkbox" className="checkbox mt-4" name="terms" />
+          Accept terms and conditions
+        </label>
+        <br />
         <button
           type="submit"
           className="w-[50%] text-xl font-semibold cursor-pointer py-2 mt-4 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition duration-300"
